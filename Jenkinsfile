@@ -20,7 +20,11 @@ pipeline {
                 input message: 'Approve for deployement?'    
                 
             }
-            build job: 'pushWARtoTomcat'
+            steps {
+                build job: 'pushWARtoTomcat'    
+                
+            }
+            
         }
             
     }
