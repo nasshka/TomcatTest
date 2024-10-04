@@ -1,7 +1,7 @@
 job('First DSL Project') {
     description("Descriere DSL")
     scm {
-        git('git@github.com:nasshka/TomcatTest.git', 'main')
+        git('https://github.com/nasshka/TomcatTest.git', 'main')
     }
     triggers {
         scm('* * * * *')
