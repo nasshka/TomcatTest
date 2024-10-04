@@ -2,15 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Build war file from github') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Build') {
+        
+        stage('Build application') {
             steps {
                 bat 'mvn clean package'
-                echo 'Package was build'
+                
             }
             post {
                 success {
@@ -19,5 +15,7 @@ pipeline {
                 }
             }
         }
+        stage('Push app to Server')
+            build job: 'pushWARtoTomcat'
     }
 }
