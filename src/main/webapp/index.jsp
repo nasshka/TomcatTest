@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2><%= "facut cu build and stuff" %></h2>
+<h2><%= "facut iar dimineata" %></h2>
 </body>
 </html>
