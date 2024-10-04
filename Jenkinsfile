@@ -1,6 +1,8 @@
 pipeline {
-    agent 'Ubuntu_node'
-
+    agent { 
+                label 'Ubuntu_node'
+            }
+   
     stages {
         
         stage('Build application') {
