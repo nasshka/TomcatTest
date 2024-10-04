@@ -1,4 +1,4 @@
-job('First DSL Project') {
+job('First DSL Project1') {
     description("Descriere DSL")
     scm {
         git('https://github.com/nasshka/TomcatTest.git', 'main')
