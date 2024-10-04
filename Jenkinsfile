@@ -2,24 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Init') {
+        stage('Build war file from github') {
             steps {
                 echo 'Building..'
             }
         }
         stage('Build') {
             steps {
-                echo 'Testing..'
+                cmd 'mvn clean package'
+                echo 'Package was build'
             }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-        stage('Deploy Production') {
-            steps {
-                echo 'Deploying to production....'
+            post {
+                success {
+                    echo 'Archiving the artefact'
+                    archiveArtifacts artifacts: '**/*.war'
+                }
             }
         }
     }
