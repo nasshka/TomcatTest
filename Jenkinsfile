@@ -15,7 +15,9 @@ pipeline {
                 }
             }
         }
-        stage('Push app to Server')
+        stage('Push app to Server'){
             build job: 'pushWARtoTomcat'
+        }
+            
     }
 }
