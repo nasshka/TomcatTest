@@ -17,10 +17,10 @@ pipeline {
         }
         stage('Push app to Server'){
             steps {
-                build job: 'pushWARtoTomcat'
+                input message: 'Approve for deployement?'    
                 
             }
-            
+            build job: 'pushWARtoTomcat'
         }
             
     }
