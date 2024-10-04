@@ -17,10 +17,10 @@ pipeline {
         }
         stage('Push app to Server'){
             steps {
-                input message: 'Approve for deployement?'    
-                
-            }
-            steps {
+                timeout(time:5, unit:'DAYS'){ 
+                    input message: 'Approve for deployement?'    
+                }
+            
                 build job: 'pushWARtoTomcat'    
                 
             }
